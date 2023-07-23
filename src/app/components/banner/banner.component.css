@@ -1,0 +1,29 @@
+.scrollport {
+  -webkit-mask-image: linear-gradient(to right, #0000, #000, #000, #0000);
+  overflow-x: hidden;
+  overflow-y: hidden;
+  overscroll-behavior-x: contain;
+  display: flex;
+  align-items: start;
+  /* gap: var(--size-10);
+    padding: var(--size-10); */
+}
+
+.scrollport > div {
+  min-width: 100%;
+  block-size: var(--size-15);
+  aspect-ratio: var(--ratio-square);
+  border-radius: var(--radius-3);
+  box-shadow: var(--shadow-4);
+}
+
+body {
+  display: grid;
+  place-content: center;
+}
+
+.truncate-text {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}

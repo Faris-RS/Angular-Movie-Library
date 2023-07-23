@@ -1,0 +1,58 @@
+<div class="relative">
+  <section class="scrollport" #scrollport>
+    <div
+      *ngFor="let b of bannerResult; let i = index"
+      [ngClass]="{ active: i === activeIndex }"
+    >
+      <img
+        src="https://image.tmdb.org/t/p/original/{{ b.backdrop_path }}"
+        class="d-block w-full h-full relative z-10"
+        alt="..."
+      />
+      <div class="text ml-28 h-full relative z-30" style="top: -55%">
+        <div
+          class="bg-black opacity-80 text-white p-8"
+          style="width: 70%; height: 100%"
+        >
+          <div style="background-color: rgba(128, 128, 128, 0)">
+            <p class="font-extrabold text-3xl">{{ b.original_title }}</p>
+            <p
+              class="font-light"
+              [innerText]="b.overview"
+              appTruncateText
+              [maxCharacters]="200"
+            ></p>
+            <div class="flex mt-3">
+              <button class="bg-white text-red-500 rounded-lg pt-2 pb-2 pr-8">
+                <fa-icon [icon]="play"></fa-icon>
+                Watch Trailer
+              </button>
+              <button
+                class="pt-2 pb-2 pr-8 ml-6 border-2 items-center rounded-lg"
+              >
+                <fa-icon [icon]="clock"></fa-icon> Watch later
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div
+    class="flex justify-between opacity-20 absolute top-1/2 left-0 right-0 transform -translate-y-1/2"
+  >
+    <button
+      class="text-white font-bold rounded focus:outline-none focus:shadow-outline p-2"
+      (click)="scrollToPrevious()"
+    >
+      <fa-icon [icon]="left"></fa-icon>
+    </button>
+    <button
+      class="text-white font-bold rounded focus:outline-none focus:shadow-outline p-2"
+      (click)="scrollToNext()"
+    >
+      <fa-icon [icon]="right"></fa-icon>
+    </button>
+  </div>
+</div>
