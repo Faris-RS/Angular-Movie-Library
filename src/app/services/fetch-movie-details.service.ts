@@ -25,4 +25,53 @@ export class FetchMovieDetailsService {
       `${this.baseurl}/trending/movie/day?api_key=${this.apikey}`
     );
   }
+
+  // Fetch action movies
+  fetchActionMovies(): Observable<any> {
+    return this.http.get(
+      `${this.baseurl}/discover/movie?api_key=${this.apikey}&with_genres=28`
+    );
+  }
+
+  // Fetch adventure movies
+  fetchAdventureMovies(): Observable<any> {
+    return this.http.get(
+      `${this.baseurl}/discover/movie?api_key=${this.apikey}&with_genres=12`
+    );
+  }
+
+  // Fetch animation movies
+  fetchAnimationMovies(): Observable<any> {
+    return this.http.get(
+      `${this.baseurl}/discover/movie?api_key=${this.apikey}&with_genres=16`
+    );
+  }
+
+  // Fetch comedy movies
+  fetchComedyMovies(): Observable<any> {
+    return this.http.get(
+      `${this.baseurl}/discover/movie?api_key=${this.apikey}&with_genres=35`
+    );
+  }
+
+  // Fetch documentary movies
+  fetchDocumentaryMovies(): Observable<any> {
+    return this.http.get(
+      `${this.baseurl}/discover/movie?api_key=${this.apikey}&with_genres=99`
+    );
+  }
+
+  // Fetch science-fiction movies
+  fetchScienceFictionMovies(): Observable<any> {
+    return this.http.get(
+      `${this.baseurl}/discover/movie?api_key=${this.apikey}&with_genres=878`
+    );
+  }
+
+  // Fetch thriller movies
+  fetchThrillerMovies(): Observable<any> {
+    return this.http.get(
+      `${this.baseurl}/discover/movie?api_key=${this.apikey}&with_genres=53`
+    );
+  }
 }
