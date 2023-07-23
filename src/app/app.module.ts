@@ -8,9 +8,11 @@ import { AppComponent } from './app.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { BannerComponent } from './components/banner/banner.component';
 import { TruncateTextDirective } from './directives/truncate-text.directive';
+import { HeaderComponent } from './components/header/header.component';
+import { HomePageComponent } from './pages/home-page/home-page.component';
 
 @NgModule({
-  declarations: [AppComponent, BannerComponent, TruncateTextDirective],
+  declarations: [AppComponent, BannerComponent, TruncateTextDirective, HeaderComponent, HomePageComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
