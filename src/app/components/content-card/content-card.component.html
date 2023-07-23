@@ -3,7 +3,7 @@
     <ng-container *ngFor="let item of items">
       <div>
         <div class="w-52 h-80 relative z-10">
-          <a href="#" class="group relative block bg-black">
+          <a class="group relative block bg-black">
             <img
               alt="{{ item.title }}"
               src="https://image.tmdb.org/t/p/original/{{ item.poster_path }}"
@@ -32,7 +32,10 @@
                     <button class="bg-red-500 rounded-xl py-2">
                       <fa-icon [icon]="play">Watch</fa-icon>
                     </button>
-                    <button class="bg-red-500 rounded-xl py-2 ml-3">
+                    <button
+                      class="bg-red-500 rounded-xl py-2 ml-3"
+                      [routerLink]="['/movie', item.id]"
+                    >
                       <fa-icon [icon]="options"></fa-icon>
                     </button>
                   </div>

@@ -4,6 +4,7 @@ import {
   faAngleRight,
   faAngleLeft,
   faPlay,
+  faBars,
 } from '@fortawesome/free-solid-svg-icons';
 import { TruncateTextDirective } from 'src/app/directives/truncate-text.directive';
 import { FetchMovieDetailsService } from 'src/app/services/fetch-movie-details.service';
@@ -17,7 +18,8 @@ import { FetchMovieDetailsService } from 'src/app/services/fetch-movie-details.s
 export class BannerComponent {
   right = faAngleRight;
   left = faAngleLeft;
-  clock = faClock;
+  // clock = faClock;
+  options = faBars;
   play = faPlay;
 
   @ViewChild('scrollport') scrollportRef: ElementRef | undefined;

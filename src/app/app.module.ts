@@ -11,6 +11,7 @@ import { TruncateTextDirective } from './directives/truncate-text.directive';
 import { HeaderComponent } from './components/header/header.component';
 import { HomePageComponent } from './pages/home-page/home-page.component';
 import { ContentCardComponent } from './components/content-card/content-card.component';
+import { DetailsPageComponent } from './pages/details-page/details-page.component';
 
 @NgModule({
   declarations: [
@@ -20,6 +21,7 @@ import { ContentCardComponent } from './components/content-card/content-card.com
     HeaderComponent,
     HomePageComponent,
     ContentCardComponent,
+    DetailsPageComponent,
   ],
   imports: [
     BrowserModule,

@@ -12,7 +12,6 @@ export class FetchMovieDetailsService {
   apikey = '08cc33bd5ae3a747598ce2ad84376e66';
 
   // Fetch banner data
-
   fetchBanner(): Observable<any> {
     return this.http.get(
       `${this.baseurl}/trending/all/week?api_key=${this.apikey}`
@@ -72,6 +71,27 @@ export class FetchMovieDetailsService {
   fetchThrillerMovies(): Observable<any> {
     return this.http.get(
       `${this.baseurl}/discover/movie?api_key=${this.apikey}&with_genres=53`
+    );
+  }
+
+  // Fetch movie details
+  fetchMovieDetails(data: any): Observable<any> {
+    return this.http.get(
+      `${this.baseurl}/movie/${data}?api_key=${this.apikey}`
+    );
+  }
+
+  // Fetch movie case
+  fetchMovieCast(data: any): Observable<any> {
+    return this.http.get(
+      `${this.baseurl}/movie/${data}/credits?api_key=${this.apikey}`
+    );
+  }
+
+  // Fetch movie trailer
+  fetchMovieTrailer(data: any): Observable<any> {
+    return this.http.get(
+      `${this.baseurl}/movie/${data}/videos?api_key=${this.apikey}`
     );
   }
 }
