@@ -10,9 +10,17 @@ import { BannerComponent } from './components/banner/banner.component';
 import { TruncateTextDirective } from './directives/truncate-text.directive';
 import { HeaderComponent } from './components/header/header.component';
 import { HomePageComponent } from './pages/home-page/home-page.component';
+import { ContentCardComponent } from './components/content-card/content-card.component';
 
 @NgModule({
-  declarations: [AppComponent, BannerComponent, TruncateTextDirective, HeaderComponent, HomePageComponent],
+  declarations: [
+    AppComponent,
+    BannerComponent,
+    TruncateTextDirective,
+    HeaderComponent,
+    HomePageComponent,
+    ContentCardComponent,
+  ],
   imports: [
     BrowserModule,
     AppRoutingModule,

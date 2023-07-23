@@ -11,11 +11,18 @@ export class FetchMovieDetailsService {
   baseurl = 'https://api.themoviedb.org/3';
   apikey = '08cc33bd5ae3a747598ce2ad84376e66';
 
-  //bannerapidata
+  // Fetch banner data
 
   fetchBanner(): Observable<any> {
     return this.http.get(
       `${this.baseurl}/trending/all/week?api_key=${this.apikey}`
+    );
+  }
+
+  // Fetch trending movies
+  fetchTrendingMovies(): Observable<any> {
+    return this.http.get(
+      `${this.baseurl}/trending/movie/day?api_key=${this.apikey}`
     );
   }
 }
