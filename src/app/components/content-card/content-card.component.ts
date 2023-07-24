@@ -1,6 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { faBars, faPlay } from '@fortawesome/free-solid-svg-icons';
 import { TruncateTextDirective } from 'src/app/directives/truncate-text.directive';
+import { FetchMovieDetailsService } from 'src/app/services/fetch-movie-details.service';
 
 @Component({
   selector: 'app-content-card',
@@ -14,7 +15,17 @@ export class ContentCardComponent implements OnInit {
 
   @Input() items: any[] = [];
 
-  constructor() {}
+  constructor(private service: FetchMovieDetailsService) {}
 
   ngOnInit(): void {}
+
+  getTrailer(id: any) {
+    this.service.fetchMovieTrailer(id).subscribe((result) => {
+      result.results.forEach((element: any) => {
+        if (element.type == 'Trailer') {
+          window.location.href = `https://www.themoviedb.org/video/play?key=${element.key}`;
+        }
+      });
+    });
+  }
 }

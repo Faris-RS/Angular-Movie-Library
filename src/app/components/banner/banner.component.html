@@ -23,7 +23,10 @@
               [maxCharacters]="200"
             ></p>
             <div class="flex mt-3">
-              <button class="bg-white text-red-500 rounded-lg pt-2 pb-2 pr-8">
+              <button
+                class="bg-white text-red-500 rounded-lg pt-2 pb-2 pr-8"
+                (click)="getTrailer(b.id)"
+              >
                 <fa-icon [icon]="play"></fa-icon>
                 Watch Trailer
               </button>

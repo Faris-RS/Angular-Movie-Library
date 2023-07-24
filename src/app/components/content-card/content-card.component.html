@@ -29,7 +29,10 @@
                   </p>
                   <br />
                   <div class="flex justify-evenly text-white">
-                    <button class="bg-red-500 rounded-xl py-2">
+                    <button
+                      class="bg-red-500 rounded-xl py-2"
+                      (click)="getTrailer(item.id)"
+                    >
                       <fa-icon [icon]="play">Watch</fa-icon>
                     </button>
                     <button

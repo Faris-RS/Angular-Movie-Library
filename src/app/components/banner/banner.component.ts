@@ -1,5 +1,4 @@
 import { Component, ElementRef, HostListener, ViewChild } from '@angular/core';
-import { faClock } from '@fortawesome/free-regular-svg-icons';
 import {
   faAngleRight,
   faAngleLeft,
@@ -18,13 +17,15 @@ import { FetchMovieDetailsService } from 'src/app/services/fetch-movie-details.s
 export class BannerComponent {
   right = faAngleRight;
   left = faAngleLeft;
-  // clock = faClock;
   options = faBars;
   play = faPlay;
 
   @ViewChild('scrollport') scrollportRef: ElementRef | undefined;
 
-  constructor(private service: FetchMovieDetailsService) {}
+  constructor(
+    private service: FetchMovieDetailsService,
+  ) {}
+
   bannerResult: any = [];
   activeIndex: number = 0;
 
@@ -68,7 +69,7 @@ export class BannerComponent {
       this.activeIndex = this.bannerResult.length - 1;
     }
     this.scrollToActiveCard();
-    this.resetAutoSlide(); // Reset the timer when the user manually changes slide
+    this.resetAutoSlide();
   }
 
   scrollToNext(): void {
@@ -78,7 +79,7 @@ export class BannerComponent {
       this.activeIndex = 0;
     }
     this.scrollToActiveCard();
-    this.resetAutoSlide(); // Reset the timer when the user manually changes slide
+    this.resetAutoSlide();
   }
 
   private scrollToActiveCard(): void {
@@ -105,5 +106,15 @@ export class BannerComponent {
   @HostListener('scroll')
   onInteraction(): void {
     this.resetAutoSlide();
+  }
+
+  getTrailer(id: any) {
+    this.service.fetchMovieTrailer(id).subscribe((result) => {
+      result.results.forEach((element: any) => {
+        if (element.type == 'Trailer') {
+          window.location.href = `https://www.themoviedb.org/video/play?key=${element.key}`;
+        }
+      });
+    });
   }
 }

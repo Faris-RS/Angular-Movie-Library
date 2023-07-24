@@ -47,8 +47,13 @@ export class DetailsPageComponent implements OnInit {
   }
 
   getVideo(id: any) {
-    this.service.fetchMovieTrailer(id).subscribe((result: any) => {
-      this.getMovieVideoResult = result;
+    this.service.fetchMovieTrailer(id).subscribe((result) => {
+      console.log(result, 'getVideo details');
+      result.results.forEach((element: any) => {
+        if (element.type == 'Trailer') {
+          this.getMovieVideoResult = element.key;
+        }
+      });
     });
   }
 
