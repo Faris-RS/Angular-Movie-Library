@@ -12,6 +12,9 @@ import { HeaderComponent } from './components/header/header.component';
 import { HomePageComponent } from './pages/home-page/home-page.component';
 import { ContentCardComponent } from './components/content-card/content-card.component';
 import { DetailsPageComponent } from './pages/details-page/details-page.component';
+import { SearchInputComponent } from './components/search-input/search-input.component';
+import { SearchResultComponent } from './components/search-result/search-result.component';
+import { SearchPageComponent } from './pages/search-page/search-page.component';
 
 @NgModule({
   declarations: [
@@ -22,6 +25,9 @@ import { DetailsPageComponent } from './pages/details-page/details-page.componen
     HomePageComponent,
     ContentCardComponent,
     DetailsPageComponent,
+    SearchInputComponent,
+    SearchResultComponent,
+    SearchPageComponent,
   ],
   imports: [
     BrowserModule,

@@ -94,4 +94,11 @@ export class FetchMovieDetailsService {
       `${this.baseurl}/movie/${data}/videos?api_key=${this.apikey}`
     );
   }
+
+  // Search movie
+  searchMovie(data: any): Observable<any> {
+    return this.http.get(
+      `${this.baseurl}/search/movie?api_key=${this.apikey}&query=${data.movieName}`
+    );
+  }
 }
