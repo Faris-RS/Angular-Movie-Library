@@ -1,13 +1,13 @@
 <div class="relative">
   <section class="scrollport" #scrollport>
     <div
-      *ngFor="let b of bannerResult; let i = index"
+      *ngFor="let item of bannerResult; let i = index"
       [ngClass]="{ active: i === activeIndex }"
     >
       <img
-        src="https://image.tmdb.org/t/p/original/{{ b.backdrop_path }}"
-        class="d-block w-full h-full relative z-10"
-        alt="..."
+        src="https://image.tmdb.org/t/p/original/{{ item.backdrop_path }}"
+        class="d-block w-full h-full relative z-10 lg:object-cover"
+        alt="{{ item.original_title }}"
       />
       <div class="text ml-28 h-full relative z-30" style="top: -55%">
         <div
@@ -15,24 +15,24 @@
           style="width: 70%; height: 100%"
         >
           <div style="background-color: rgba(128, 128, 128, 0)">
-            <p class="font-extrabold text-3xl">{{ b.original_title }}</p>
+            <p class="font-extrabold text-3xl">{{ item.original_title }}</p>
             <p
               class="font-light"
-              [innerText]="b.overview"
+              [innerText]="item.overview"
               appTruncateText
               [maxCharacters]="200"
             ></p>
             <div class="flex mt-3">
               <button
                 class="bg-white text-red-500 rounded-lg pt-2 pb-2 pr-8"
-                (click)="getTrailer(b.id)"
+                (click)="getTrailer(item.id)"
               >
                 <fa-icon [icon]="play"></fa-icon>
                 Watch Trailer
               </button>
               <button
                 class="pt-2 pb-2 pr-8 ml-6 border-2 items-center rounded-lg"
-                [routerLink]="['/movie', b.id]"
+                [routerLink]="['/movie', item.id]"
               >
                 <fa-icon [icon]="options"></fa-icon> View details
               </button>

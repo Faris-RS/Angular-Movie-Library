@@ -5,8 +5,6 @@
   overscroll-behavior-x: contain;
   display: flex;
   align-items: start;
-  /* gap: var(--size-10);
-    padding: var(--size-10); */
 }
 
 .scrollport > div {

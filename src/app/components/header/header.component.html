@@ -1,7 +1,16 @@
 <div class="bg-black h-16 flex justify-between p-5">
-  <div>Icon</div>
-  <div class="flex">
-    <div class="text-red-500" [routerLink]="['']">Home</div>
-    <div class="text-red-500 ml-10" [routerLink]="['/search']">Search</div>
+  <div class="text-red-500 text-xl item-center justify-center flex">
+    <img
+      src="https://download.logo.wine/logo/Netflix/Netflix-Logo.wine.png"
+      alt="Netflix"
+      class="h-32 w-32 object-contain"
+      style="margin-top: -40%"
+      [routerLink]="['']"
+    />
+  </div>
+  <div class="flex mr-64 justify-between">
+    <div class="ml-10 text-red-600" [routerLink]="['/search']">
+      <fa-icon [icon]="search">Search</fa-icon> Search
+    </div>
   </div>
 </div>

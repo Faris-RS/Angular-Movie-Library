@@ -22,9 +22,7 @@ export class BannerComponent {
 
   @ViewChild('scrollport') scrollportRef: ElementRef | undefined;
 
-  constructor(
-    private service: FetchMovieDetailsService,
-  ) {}
+  constructor(private service: FetchMovieDetailsService) {}
 
   bannerResult: any = [];
   activeIndex: number = 0;
@@ -101,7 +99,6 @@ export class BannerComponent {
     }
   }
 
-  // Event listener to reset the auto slide timer on user interaction
   @HostListener('click')
   @HostListener('scroll')
   onInteraction(): void {
